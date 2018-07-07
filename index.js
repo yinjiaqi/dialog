@@ -51,62 +51,7 @@ restService.post("/echo", function(req, res) {
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
 });
-// Basic card
 
-app.intent('basic card', (conv) => {
-
-  if (!conv.hasScreen) {
-
-    conv.ask('Sorry, try this on a screen device or select the ' +
-
-      'phone surface in the simulator.');
-
-    return;
-
-  }
-
-  conv.ask('This is the first simple response for a basic card.');
-
-  conv.ask(new Suggestions(intentSuggestions));
-
-  // Create a basic card
-
-  conv.ask(new BasicCard({
-
-    text: `This is a basic card.  Text in a basic card can include "quotes" and
-
-    most other unicode characters including emoji 📱.  Basic cards also support
-
-    some markdown formatting like *emphasis* or _italics_, **strong** or
-
-    __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other
-
-    things like line  \nbreaks`, // Note the two spaces before '\n' required for
-
-                                 // a line break to be rendered in the card.
-
-    subtitle: 'This is a subtitle',
-
-    title: 'Title: this is a title',
-
-    buttons: new Button({
-
-      title: 'This is a button',
-
-      url: 'https://assistant.google.com/',
-
-    }),
-
-    image: new Image({
-
-      url: IMG_URL_AOG,
-
-      alt: 'Image alternate text',
-
-    }),
-
-  }));
-
-restService.listen(process.env.PORT || 8000, function() {
+     restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");
 });
