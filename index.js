@@ -22,7 +22,7 @@ restService.post("/echo", function(req, res) {
 
     console.log('Incoming request body:', req.body);
 
-    var speech =
+        var speech =
         req.body.queryResult &&
         req.body.queryResult.parameters &&
         req.body.queryResult.parameters.echoText
@@ -61,6 +61,7 @@ restService.post("/echo", function(req, res) {
                                 ],
                                 "imageDisplayOptions": "CROPPED"
                             }
+                        }     
                     ]
                 }
             }
