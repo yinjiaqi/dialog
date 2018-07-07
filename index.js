@@ -51,6 +51,15 @@ restService.post("/echo", function(req, res) {
     });
 });
 
+conv.ask(new BasicCard({
+text: `This is a basic card.`,
+subtitle: 'This is a subtitle',
+title: 'Title: this is a title',
+buttons: new Button({
+title: 'This is a button',
+url: 'https://assistant.google.com/',
+}),
+}));
 restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");
 });
