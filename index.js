@@ -7,13 +7,13 @@ const restService = express();
 const outside="I am outside ";
 
 var http=require('https');
-var result='';
+
 http.get('https://jsonplaceholder.typicode.com/posts/2', function(res) {
   //console.log("Got response: " + res.statusCode);
 
   res.on("data", function(chunk) {
     //console.log("body"+chunk);
-result=console.log("body"+chunk);
+var result=console.log("body"+chunk);
 console.log(result);
 
   
