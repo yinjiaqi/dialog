@@ -5,18 +5,22 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 const outside="I am outside ";
-var https = require("https");
 
-var http=require('https')
-https.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
+var http=require('https');
+var result='';
+http.get('https://jsonplaceholder.typicode.com/posts/2', function(res) {
   //console.log("Got response: " + res.statusCode);
 
   res.on("data", function(chunk) {
-    console.log("body"+chunk);
+    //console.log("body"+chunk);
+result=console.log("body"+chunk);
+console.log(result);
+
   });
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
 });
+
 
 
 restService.use(
@@ -60,8 +64,8 @@ restService.post("/echo", function(req, res) {
                         },
                         {
                             "basicCard": {
-                                "title": outside + speech,
-                                "formattedText": " Your Query Input"+ speech,
+                                "title": outside + speech +result,
+                                "formattedText": " Your Query Input "+ speech,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
                                     "accessibilityText": "Image alternate text"
