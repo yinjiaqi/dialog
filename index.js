@@ -19,7 +19,7 @@ console.log(result);
 
   });
 
-
+result="body"+chunk;
 
 
 restService.use(
