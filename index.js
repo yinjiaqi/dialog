@@ -18,9 +18,7 @@ var result="body"+chunk;
 console.log(result);
 
   });
-}).on('error', function(e) {
-  console.log("Got error: " + e.message);
-});
+
 
 
 
@@ -66,7 +64,7 @@ restService.post("/echo", function(req, res) {
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input "+ speech +result,
+                                "formattedText": " Your Query Input "+ speech,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
                                     "accessibilityText": "Image alternate text"
@@ -88,7 +86,7 @@ restService.post("/echo", function(req, res) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-
+});
 });
 
      restService.listen(process.env.PORT || 8000, function() {
