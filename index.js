@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 const outside="I am outside ";
+var request = require('request');
+var url = 'https://jsonplaceholder.typicode.com/posts/1';
 
 restService.use(
     bodyParser.urlencoded({
@@ -13,7 +15,20 @@ restService.use(
 );
 
 restService.use(bodyParser.json());
-
+request.get({
+    url: url,
+    json: true,
+    headers: {'User-Agent': 'request'}
+  }, (err, res, data) => {
+    if (err) {
+      console.log('Error:', err);
+    } else if (res.statusCode !== 200) {
+      console.log('Status:', res.statusCode);
+    } else {
+      // data is already parsed as JSON:
+      console.log(data);
+    }
+});
 restService.get("/", function (req, res) {
     return res.send('Hello from Echo sample!');
 });
