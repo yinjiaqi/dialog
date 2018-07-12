@@ -66,7 +66,7 @@ restService.post("/echo", function(req, res) {
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input "+ speech,
+                                "formattedText": " Your Query Input "+ speech +result,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
                                     "accessibilityText": "Image alternate text"
