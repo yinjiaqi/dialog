@@ -16,7 +16,7 @@ http.get('https://jsonplaceholder.typicode.com/posts/2', function(res) {
 result=console.log("body"+chunk);
 console.log(result);
 
-  });
+  
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
 });
@@ -87,7 +87,7 @@ restService.post("/echo", function(req, res) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-
+});
 });
 
      restService.listen(process.env.PORT || 8000, function() {
