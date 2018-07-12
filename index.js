@@ -65,7 +65,7 @@ request.get({
                         },
                         {
                             "basicCard": {
-                                "title": outside + speech +data,
+                                "title": outside + speech,
                                 "formattedText": " Your Query Input"+ speech,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
