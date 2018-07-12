@@ -7,7 +7,20 @@ const restService = express();
 const outside="I am outside ";
 
 //var http=require('https');
+var http=require('https');
 
+http.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
+  //console.log("Got response: " + res.statusCode);
+
+  res.on("data", function(chunk) {
+    //console.log("body"+chunk);
+var result="body"+chunk;
+console.log(result);
+
+  });
+}).on('error', function(e) {
+  console.log("Got error: " + e.message);
+});
 
 
 
