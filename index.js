@@ -36,9 +36,8 @@ request.get({
     } else {
       // data is already parsed as JSON:
       console.log(data);
-
     }
-    
+}); 
     
     console.log('Incoming request body:', req.body);
 
@@ -88,7 +87,7 @@ request.get({
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-});
+
 });
 
      restService.listen(process.env.PORT || 8000, function() {
