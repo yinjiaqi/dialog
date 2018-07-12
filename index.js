@@ -19,11 +19,8 @@ restService.get("/", function (req, res) {
     return res.send('Hello from Echo sample!');
 });
 
-restService.post("/echo", function(req, res) {
 var request = require('request');
-
 var url = 'https://jsonplaceholder.typicode.com/posts/1';
-
 request.get({
     url: url,
     json: true,
@@ -38,6 +35,8 @@ request.get({
       console.log(data);
     }
 }); 
+restService.post("/echo", function(req, res) {
+
     
     console.log('Incoming request body:', req.body);
 
