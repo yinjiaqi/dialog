@@ -20,7 +20,26 @@ restService.get("/", function (req, res) {
 });
 
 restService.post("/echo", function(req, res) {
+var request = require('request');
 
+var url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+request.get({
+    url: url,
+    json: true,
+    headers: {'User-Agent': 'request'}
+  }, (err, res, data) => {
+    if (err) {
+      console.log('Error:', err);
+    } else if (res.statusCode !== 200) {
+      console.log('Status:', res.statusCode);
+    } else {
+      // data is already parsed as JSON:
+      //console.log(data);
+
+    }
+    
+    
     console.log('Incoming request body:', req.body);
 
         var speech =
@@ -46,7 +65,7 @@ restService.post("/echo", function(req, res) {
                         },
                         {
                             "basicCard": {
-                                "title": outside + speech,
+                                "title": outside + speech +data,
                                 "formattedText": " Your Query Input"+ speech,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
@@ -69,6 +88,7 @@ restService.post("/echo", function(req, res) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
+});
 });
 
      restService.listen(process.env.PORT || 8000, function() {
