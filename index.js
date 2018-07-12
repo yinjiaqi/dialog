@@ -1,20 +1,6 @@
 "use strict";
-
-const express = require("express");
-const bodyParser = require("body-parser");
-
-const restService = express();
-const outside="I am outside ";
 var request = require('request');
 var url = 'https://jsonplaceholder.typicode.com/posts/1';
-
-restService.use(
-    bodyParser.urlencoded({
-        extended: true
-    })
-);
-
-restService.use(bodyParser.json());
 request.get({
     url: url,
     json: true,
@@ -29,6 +15,20 @@ request.get({
       console.log(data);
     }
 });
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const restService = express();
+const outside="I am outside ";
+
+restService.use(
+    bodyParser.urlencoded({
+        extended: true
+    })
+);
+
+restService.use(bodyParser.json());
+
 restService.get("/", function (req, res) {
     return res.send('Hello from Echo sample!');
 });
