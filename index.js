@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const restService = express();
+const outside="I am outside ";
 
 restService.use(
     bodyParser.urlencoded({
@@ -45,7 +46,7 @@ restService.post("/echo", function(req, res) {
                         },
                         {
                             "basicCard": {
-                                "title": speech,
+                                "title": outside + speech,
                                 "formattedText": " Your Query Input"+ speech,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
