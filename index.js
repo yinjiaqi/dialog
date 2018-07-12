@@ -20,7 +20,7 @@ console.log(result);
 }).on('error', function(e) {
   console.log("Got error: " + e.message);
 });
-
+});
 
 
 restService.use(
@@ -87,7 +87,7 @@ restService.post("/echo", function(req, res) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-});
+
 });
 
      restService.listen(process.env.PORT || 8000, function() {
