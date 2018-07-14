@@ -50,7 +50,7 @@ restService.post("/echo", function(req, res) {
             : "Seems like some problem. Speak again.";
 
     console.log('speech:', speech);
- var qstring=req.body.queryResult.parameters.echoText;
+ var qstring=1;
   var con = mysql.createConnection({
   host: "sql12.freemysqlhosting.net",
   user: "sql12247448",
