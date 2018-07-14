@@ -45,7 +45,7 @@ con.connect(function(err) {
   con.query("SELECT * FROM Employee where eid=1", function (err, result) {
     if (err) throw err;
     console.log(result);
-  
+}); });  
 
     
     console.log('Incoming request body:', req.body);
@@ -74,7 +74,7 @@ con.connect(function(err) {
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input "+ speech +result,
+                                "formattedText": " Your Query Input "+ speech +result1,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
                                     "accessibilityText": "Image alternate text"
@@ -96,7 +96,7 @@ con.connect(function(err) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-});  }); }); });
+});  }); 
 });
 
      restService.listen(process.env.PORT || 8000, function() {
