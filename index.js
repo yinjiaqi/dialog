@@ -25,9 +25,9 @@ console.log(result1);
 
  con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM Employee where eid=1", function (err, result2) {
+  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
     if (err) throw err;
-    
+    var result2=JSON.stringify(result);
     console.log(result2);
 
 
