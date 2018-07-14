@@ -81,7 +81,7 @@ database: "sql12247448"
                                 "title": outside + speech,
                                 "formattedText": " Your Query Input "+ speech +result2,
                                 "image": {
-                                    "url": "https://example.google.com/42.png",
+                                    "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
                                     "accessibilityText": "Image alternate text"
                                 },
                                 "buttons": [
