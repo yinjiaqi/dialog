@@ -40,11 +40,12 @@ restService.get("/", function (req, res) {
 
 
 restService.post("/echo", function(req, res) {
-con.connect(function(err) {
+
+  con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
+  con.query("SELECT * FROM Employee where eid=1", function (err, result2) {
     if (err) throw err;
-    var result2=result;
+    
     console.log(result2);
   
 
@@ -69,7 +70,7 @@ con.connect(function(err) {
                     items: [
                         {
                             simpleResponse: {
-                                textToSpeech: speech +result2
+                                textToSpeech: speech
                             }
                         },
                         {
