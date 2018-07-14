@@ -44,8 +44,9 @@ con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid=1", function (err, result) {
     if (err) throw err;
-    console.log(result);
-}); });  
+    var result2=result;
+    console.log(result2);
+  
 
     
     console.log('Incoming request body:', req.body);
@@ -68,13 +69,13 @@ con.connect(function(err) {
                     items: [
                         {
                             simpleResponse: {
-                                textToSpeech: speech +result1
+                                textToSpeech: speech +result2
                             }
                         },
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input "+ speech +result1,
+                                "formattedText": " Your Query Input "+ speech +result2,
                                 "image": {
                                     "url": "https://example.google.com/42.png",
                                     "accessibilityText": "Image alternate text"
@@ -96,7 +97,7 @@ con.connect(function(err) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-});  }); 
+});  }); }); });
 });
 
      restService.listen(process.env.PORT || 8000, function() {
