@@ -6,7 +6,13 @@ const bodyParser = require("body-parser");
 const restService = express();
 const outside="I am outside ";
 var mysql = require('mysql');
-//var http=require('https');
+var con = mysql.createConnection({
+  host: "sql12.freemysqlhosting.net",
+  user: "sql12247448",
+  password: "eVJ7Jfki2A",
+database: "sql12247448"
+});
+
 var http=require('https');
 
 http.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
