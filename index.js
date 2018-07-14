@@ -23,7 +23,12 @@ http.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
 var result1="body"+chunk;
 console.log(result1);
 
-
+ con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM Employee where eid=1", function (err, result2) {
+    if (err) throw err;
+    
+    console.log(result2);
 
 
 restService.use(
@@ -41,12 +46,7 @@ restService.get("/", function (req, res) {
 
 restService.post("/echo", function(req, res) {
 
-  con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT * FROM Employee where eid=1", function (err, result2) {
-    if (err) throw err;
-    
-    console.log(result2);
+ 
   
 
     
