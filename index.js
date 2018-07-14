@@ -20,8 +20,8 @@ http.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
 
   res.on("data", function(chunk) {
     //console.log("body"+chunk);
-var result="body"+chunk;
-console.log(result);
+var result1="body"+chunk;
+console.log(result1);
 
 
 
@@ -40,6 +40,12 @@ restService.get("/", function (req, res) {
 
 
 restService.post("/echo", function(req, res) {
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  
 
     
     console.log('Incoming request body:', req.body);
@@ -62,7 +68,7 @@ restService.post("/echo", function(req, res) {
                     items: [
                         {
                             simpleResponse: {
-                                textToSpeech: speech +result
+                                textToSpeech: speech +result1
                             }
                         },
                         {
@@ -90,7 +96,7 @@ restService.post("/echo", function(req, res) {
         },
         source: "https://echo-webhook-dialogflow.herokuapp.com"
     });
-});  });
+});  }); }); });
 });
 
      restService.listen(process.env.PORT || 8000, function() {
