@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 const outside="I am outside ";
-//var mysql = require('mysql');
+var mysql = require('mysql');
 //var http=require('https');
 var http=require('https');
 
