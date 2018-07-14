@@ -23,12 +23,7 @@ http.get('https://jsonplaceholder.typicode.com/posts/1', function(res) {
 var result1="body"+chunk;
 console.log(result1);
 
- con.connect(function(err) {
-  if (err) throw err;
-  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
-    if (err) throw err;
-    var result2=JSON.stringify(result);
-    console.log(result2);
+
 
 
 restService.use(
@@ -60,7 +55,14 @@ restService.post("/echo", function(req, res) {
             : "Seems like some problem. Speak again.";
 
     console.log('speech:', speech);
-
+ 
+  con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
+    if (err) throw err;
+    var result2=JSON.stringify(result);
+    console.log(result2);
+  
     return res.json({
         fulfillmentText: speech,
         payload: {
