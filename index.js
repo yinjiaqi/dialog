@@ -6,12 +6,7 @@ const bodyParser = require("body-parser");
 const restService = express();
 const outside="I am outside ";
 var mysql = require('mysql');
-var con = mysql.createConnection({
-  host: "sql12.freemysqlhosting.net",
-  user: "sql12247448",
-  password: "eVJ7Jfki2A",
-database: "sql12247448"
-});
+
 
 var http=require('https');
 
@@ -56,6 +51,12 @@ restService.post("/echo", function(req, res) {
 
     console.log('speech:', speech);
  
+  var con = mysql.createConnection({
+  host: "sql12.freemysqlhosting.net",
+  user: "sql12247448",
+  password: "eVJ7Jfki2A",
+database: "sql12247448"
+});
   con.connect(function(err) {
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid=1", function (err, result) {
