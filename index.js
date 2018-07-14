@@ -50,7 +50,7 @@ restService.post("/echo", function(req, res) {
             : "Seems like some problem. Speak again.";
 
     console.log('speech:', speech);
- 
+ var qstring=req.body.queryResult.parameters.echoText;
   var con = mysql.createConnection({
   host: "sql12.freemysqlhosting.net",
   user: "sql12247448",
@@ -59,7 +59,7 @@ database: "sql12247448"
 });
   con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM Employee where eid=1", function (err, result) {
+  con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
     var result2=JSON.stringify(result);
     console.log(result2);
