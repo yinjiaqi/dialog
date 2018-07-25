@@ -62,20 +62,38 @@ database: "sql12247448"
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
-    tableify(result[, {
+    var result2=JSON.stringify(result);
+    console.log(result2);
+    tableify([{
+  name: 'optionalArray',
+  description: 'Description of optionalArray.',
+  required: '',
+  type: 'array',
+  defaultValue: '[]'
+}, {
+  name: 'optionalBool',
+  description: 'Description of optionalBool.',
+  required: '',
+  type: 'bool',
+  defaultValue: 'false'
+}], {
   headers: [{
-    name: 'eid',
+    name: 'name',
     align: 'left',
-    title: 'employee id'
+    title: 'Your Name'
   }, {
-    name: 'fname',
+    name: 'description',
     align: 'left'
   }, {
-    name: 'lname',
+    name: 'type',
     align: 'left'
   }, {
-    name: 'salary',
+    name: 'required',
     align: 'center'
+  }, {
+    name: 'defaultValue',
+    align: 'center',
+    title: 'Default Value'
   }]
 });
     return res.json({
@@ -91,23 +109,23 @@ database: "sql12247448"
                             }
                         },
                         {
-                            "basicCard": {
-                                "title": outside + speech,
-                                "formattedText": " Your Query Input = "+ speech + "\n" +tableify,
-                                "image": {
-                                    "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
-                                    "accessibilityText": "Image alternate text"
-                                },
-                                "buttons": [
-                                    {
-                                        "title": "Read more",
-                                        "openUrlAction": {
-                                            "url": "https://example.google.com/mathandprimes"
-                                        }
-                                    }
-                                ],
-                                "imageDisplayOptions": "CROPPED"
-                            }
+                            "basicCard": {
+                                "title": outside + speech,
+                                "formattedText": " Your Query Input = "+ speech + "\n" +result2+tableify,
+                                "image": {
+                                    "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
+                                    "accessibilityText": "Image alternate text"
+                                },
+                                "buttons": [
+                                    {
+                                        "title": "Read more",
+                                        "openUrlAction": {
+                                            "url": "https://example.google.com/mathandprimes"
+                                        }
+                                    }
+                                ],
+                                "imageDisplayOptions": "CROPPED"
+                            }
                         }     
                     ]
                 }
