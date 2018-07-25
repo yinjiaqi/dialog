@@ -63,24 +63,35 @@ database: "sql12247448"
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
 tableify([{
-  eid: 'result.eid',
-  fname:'result.fname',
-  lname: 'result.lname',
-  salary: 'result.salary'
+  name: 'optionalArray',
+  description: 'Description of optionalArray.',
+  required: '',
+  type: 'array',
+  defaultValue: '[]'
+}, {
+  name: 'optionalBool',
+  description: 'Description of optionalBool.',
+  required: '',
+  type: 'bool',
+  defaultValue: 'false'
 }], {
   headers: [{
-    name: 'eid',
+    name: 'name',
     align: 'left',
-    title: 'Employee id'
+    title: 'Your Name'
   }, {
-    name: 'fname',
+    name: 'description',
     align: 'left'
   }, {
-    name: 'lname',
+    name: 'type',
     align: 'left'
   }, {
-    name: 'salary',
+    name: 'required',
     align: 'center'
+  }, {
+    name: 'defaultValue',
+    align: 'center',
+    title: 'Default Value'
   }]
 });
     
