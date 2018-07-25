@@ -83,8 +83,6 @@ database: "sql12247448"
     align: 'center'
   }]
 });
-    console.log(tableify);
-  
     return res.json({
         fulfillmentText: speech,
         payload: {
