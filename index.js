@@ -63,17 +63,10 @@ database: "sql12247448"
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
    tableify([{
-  name: 'result',
-  description: 'Description of optionalArray.',
-  required: '',
-  type: 'array',
-  defaultValue: '[]'
-}, {
-  name: 'ture',
-  description: 'Description of optionalBool.',
-  required: '',
-  type: 'bool',
-  defaultValue: 'false'
+  eid: 'result.eid',
+  fname: 'result.fname',
+  lname: 'result.lname',
+  salary: 'result.salary'
 }], {
   headers: [{
     name: 'eid',
