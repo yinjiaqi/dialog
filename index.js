@@ -62,12 +62,7 @@ database: "sql12247448"
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
-    tableify([{
-  "eid": result.eid,
-  "fname": "result.fname",
-  "lname": "result.lname",
-  "salary": result.salary
-}], {
+    tableify(result[, {
   headers: [{
     name: 'eid',
     align: 'left',
