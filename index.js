@@ -62,26 +62,32 @@ database: "sql12247448"
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
-    var result2=JSON.stringify(result);
-    console.log(result2);
-    tableify([{\"eid\":1,\"fname\":\"David\",\"lname\":\"Mason\",\"salary\":100000}], {
+   tableify([{
+  name: 'result',
+  description: 'Description of optionalArray.',
+  required: '',
+  type: 'array',
+  defaultValue: '[]'
+}, {
+  name: 'ture',
+  description: 'Description of optionalBool.',
+  required: '',
+  type: 'bool',
+  defaultValue: 'false'
+}], {
   headers: [{
-    name: 'name',
+    name: 'eid',
     align: 'left',
-    title: 'Your Name'
+    title: 'employee id'
   }, {
-    name: 'description',
+    name: 'fname',
     align: 'left'
   }, {
-    name: 'type',
+    name: 'lname',
     align: 'left'
   }, {
-    name: 'required',
+    name: 'salary',
     align: 'center'
-  }, {
-    name: 'defaultValue',
-    align: 'center',
-    title: 'Default Value'
   }]
 });
     return res.json({
@@ -99,7 +105,7 @@ database: "sql12247448"
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input = "+ speech + "\n" +result2+tableify,
+                                "formattedText": " Your Query Input = "+ speech + "\n" +tableify,
                                 "image": {
                                     "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
                                     "accessibilityText": "Image alternate text"
