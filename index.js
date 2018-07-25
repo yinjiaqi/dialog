@@ -62,12 +62,12 @@ database: "sql12247448"
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
-    var result2=JSON.stringify(result);
     tableify([{
-  eid: 'qstring',
-  fname: 'result2.fname',
-  lname: 'result2.lname',
-  salary: 'result2.salary'
+  name: 'result',
+  description: 'Description of optionalArray.',
+  required: '',
+  type: 'array',
+  defaultValue: '[]'
 }], {
   headers: [{
     name: 'eid',
@@ -84,7 +84,7 @@ database: "sql12247448"
     align: 'center'
   }]
 });
-    console.log(result2);
+    console.log(tableify);
   
     return res.json({
         fulfillmentText: speech,
