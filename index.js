@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 const outside="I am outside ";
-const tableify = require('html-tableify');
 var mysql = require('mysql');
 
 
@@ -62,29 +61,8 @@ database: "sql12247448"
   if (err) throw err;
   con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
     if (err) throw err;
-    tableify([{
-  name: 'result',
-  description: 'Description of optionalArray.',
-  required: '',
-  type: 'array',
-  defaultValue: '[]'
-}], {
-  headers: [{
-    name: 'eid',
-    align: 'left',
-    title: 'employee id'
-  }, {
-    name: 'fname',
-    align: 'left'
-  }, {
-    name: 'lname',
-    align: 'left'
-  }, {
-    name: 'salary',
-    align: 'center'
-  }]
-});
-    console.log(tableify);
+    var result2=JSON.stringify(result);
+    console.log(result2);
   
     return res.json({
         fulfillmentText: speech,
@@ -101,7 +79,7 @@ database: "sql12247448"
                         {
                             "basicCard": {
                                 "title": outside + speech,
-                                "formattedText": " Your Query Input = "+ speech + "\n" + tableify,
+                                "formattedText": " Your Query Input = "+ speech + "\n" +result2,
                                 "image": {
                                     "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
                                     "accessibilityText": "Image alternate text"
