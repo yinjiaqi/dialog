@@ -64,19 +64,7 @@ database: "sql12247448"
     if (err) throw err;
     var result2=JSON.stringify(result);
     console.log(result2);
-    tableify([{
-  name: 'optionalArray',
-  description: 'Description of optionalArray.',
-  required: '',
-  type: 'array',
-  defaultValue: '[]'
-}, {
-  name: 'optionalBool',
-  description: 'Description of optionalBool.',
-  required: '',
-  type: 'bool',
-  defaultValue: 'false'
-}], {
+    tableify([{\"eid\":1,\"fname\":\"David\",\"lname\":\"Mason\",\"salary\":100000}], {
   headers: [{
     name: 'name',
     align: 'left',
