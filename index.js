@@ -60,7 +60,7 @@ database: "sql12247448"
 });
   con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM Employee where eid="+qstring, function (err, result) {
+  con.query("qstring", function (err, result) {
     if (err) throw err;
     //var result2=JSON.stringify(result);
     var result2=tableify(result);
