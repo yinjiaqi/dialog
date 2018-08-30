@@ -67,15 +67,20 @@ database: "sql12247448"
     console.log(result2);
   
     return res.json({
-        fulfillmentText: speech,
+       // fulfillmentText: speech,
         payload: {
             google: {
                 expectUserResponse: true,
                 richResponse: {
                     items: [
                         {
+                            simpleResponse: {
+                                textToSpeech: speech
+                            }
+                        },
+                        {
                             "basicCard": {
-                               
+                             //   "title": outside + speech,
                                 "formattedText": " Your Query Input = "+ speech + "\n" +result2,
                                 "image": {
                                     "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
