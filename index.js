@@ -74,8 +74,13 @@ database: "sql12247448"
                 richResponse: {
                     items: [
                         {
+                            simpleResponse: {
+                                textToSpeech: speech
+                            }
+                        },
+                        {
                             "basicCard": {
-                                "title": speech,
+                                "title": outside + speech,
                                 "formattedText": " Your Query Input = "+ speech + "\n" +result2,
                                 "image": {
                                     "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
