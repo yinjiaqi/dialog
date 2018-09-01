@@ -84,7 +84,7 @@ database: "sql12247448"
                              //   "title": outside + speech,
                                 "formattedText": " Your Query Input = "+ speech + "\n" +result2,
                                 "image": {
-                                    "url": "https://pic.sogou.com/d?query=%C1%C4%CC%EC%BB%FA%C6%F7%C8%CB&mode=1&did=42#did41",
+                                    "url": "http://img.duob.cn/FileUploads/2016-7-7/1467876808.jpg",
                                     "accessibilityText": "Image alternate text"
                                 },
                                 "buttons": [
