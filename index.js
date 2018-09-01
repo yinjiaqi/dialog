@@ -91,7 +91,7 @@ database: "sql12247448"
                                     {
                                         "title": "Read more",
                                         "openUrlAction": {
-                                            "url": "https://example.google.com/mathandprimes"
+                                            "url": "http://www.w3school.com.cn/sql/index.asp"
                                         }
                                     }
                                 ],
