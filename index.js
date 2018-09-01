@@ -84,7 +84,7 @@ database: "sql12247448"
                              //   "title": outside + speech,
                                 "formattedText": " Your Query Input = "+ speech + "\n" +result2,
                                 "image": {
-                                    "url": "https://otb.cachefly.net/wp-content/uploads/2013/04/red-line.png",
+                                    "url": "https://pic.sogou.com/d?query=%C1%C4%CC%EC%BB%FA%C6%F7%C8%CB&mode=1&did=42#did41",
                                     "accessibilityText": "Image alternate text"
                                 },
                                 "buttons": [
