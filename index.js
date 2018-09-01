@@ -82,7 +82,7 @@ database: "sql12247448"
                         {
                             "basicCard": {
                              //   "title": outside + speech,
-                                "formattedText": " Your Query Input = "+ speech + "\n" +result2,
+                                "formattedText": result2,
                                 "image": {
                                     "url": "http://img.duob.cn/FileUploads/2016-7-7/1467876808.jpg",
                                     "accessibilityText": "Image alternate text"
